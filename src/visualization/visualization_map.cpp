@@ -51,7 +51,7 @@ Viewer::Viewer() {
 	viewer = boost::shared_ptr<pcl::visualization::PCLVisualizer>( new pcl::visualization::PCLVisualizer( "MRS Viewer" ) );
 	viewer->setBackgroundColor( 1, 1, 1 );
 //	viewer->setBackgroundColor( 0,0,0 );
-	viewer->addCoordinateSystem( 0.1 );
+	viewer->addCoordinateSystem( 0.1, "base_coordinate_frame" );
 	viewer->initCameraParameters();
 
 	viewer->registerKeyboardCallback( &Viewer::keyboardEventOccurred, *this, NULL );
