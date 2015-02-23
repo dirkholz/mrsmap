@@ -14,7 +14,7 @@ if(CMAKE_BUILD_TYPE STREQUAL "Release" OR CMAKE_BUILD_TYPE STREQUAL "RelWithDebI
   add_definitions(-Wall -funroll-loops -momit-leaf-frame-pointer -fomit-frame-pointer -floop-block -ftree-loop-distribution -ftree-loop-linear -floop-interchange -floop-strip-mine -fgcse-lm -fgcse-sm -fsched-spec-load)
 endif()
 
-add_definitions( -std=c++0x )
+add_definitions( -std=c++11 )
 
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/Modules/" ${CMAKE_MODULE_PATH})
 
@@ -63,7 +63,7 @@ message("${OpenCV_INCLUDE_DIRS}")
 find_package(G2O REQUIRED)
 include_directories(${G2O_INCLUDE_DIR})
 
-find_package( Boost 1.40 COMPONENTS program_options REQUIRED )
+find_package( Boost 1.40 COMPONENTS program_options system REQUIRED )
 include_directories( ${Boost_INCLUDE_DIR} )
 
 

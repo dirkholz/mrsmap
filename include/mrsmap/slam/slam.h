@@ -41,6 +41,8 @@
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 
+#include <memory>
+#include <unordered_map>
 
 #include "g2o/core/sparse_optimizer.h"
 
@@ -54,7 +56,7 @@
 typedef g2o::BlockSolver< g2o::BlockSolverTraits<6, 3> >  SlamBlockSolver;
 typedef g2o::LinearSolverCSparse<SlamBlockSolver::PoseMatrixType> SlamLinearSolver;
 typedef g2o::LinearSolverCholmod<SlamBlockSolver::PoseMatrixType> SlamLinearCholmodSolver;
-typedef std::tr1::unordered_map<int, g2o::HyperGraph::Vertex*>     VertexIDMap;
+typedef std::unordered_map<int, g2o::HyperGraph::Vertex*>     VertexIDMap;
 typedef std::set<g2o::HyperGraph::Edge*> EdgeSet;
 
 #include <mrsmap/map/multiresolution_surfel_map.h>
